@@ -1,0 +1,1985 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local player = Players.LocalPlayer
+
+-- Create GUI
+local gui = Instance.new("ScreenGui")
+gui.Name = "Unknown-0 v2"
+gui.Parent = player:WaitForChild("PlayerGui")
+
+-- === Frame1 ===
+local frame1 = Instance.new("Frame")
+frame1.Name = "Frame1"
+frame1.Parent = gui
+frame1.Size = UDim2.new(0, 396, 0, 479)
+frame1.Position = UDim2.new(0.009, 0, 0.081, 0)
+frame1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame1.Visible = false -- hidden until Open is clicked
+
+local nameLabel1 = Instance.new("TextLabel")
+nameLabel1.Name = "Name"
+nameLabel1.Parent = frame1
+nameLabel1.Size = UDim2.new(0, 396, 0, 31)
+nameLabel1.Position = UDim2.new(0, 0, -0.077, 0)
+nameLabel1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+nameLabel1.Text = "Unknown-0 V2 made by RedViper24446"
+nameLabel1.TextColor3 = Color3.fromRGB(255, 255, 255)
+nameLabel1.TextScaled = false
+
+local page1Label = Instance.new("TextLabel")
+page1Label.Name = "Page1"
+page1Label.Parent = frame1
+page1Label.Size = UDim2.new(0, 177, 0, 34)
+page1Label.Position = UDim2.new(0.275, 0, 0, 0)
+page1Label.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+page1Label.Text = " Troll Page"
+page1Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+page1Label.TextScaled = false
+
+-- Frame1 Buttons
+local function createButton(parent, name, text, posX, posY)
+	local btn = Instance.new("TextButton")
+	btn.Name = name
+	btn.Parent = parent
+	btn.Size = UDim2.new(0, 112, 0, 50)
+	btn.Position = UDim2.new(posX, 0, posY, 0)
+	btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	btn.Text = text
+	btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	btn.TextScaled = false
+	return btn
+end
+
+createButton(frame1, "Fly", "Fly", 0.025, 0.104)
+createButton(frame1, "Speed", "Speed", 0.025, 0.254)
+createButton(frame1, "Teleport", "Teleport", 0.358, 0.104)
+createButton(frame1, "Invisible", "Invisible", 0.358, 0.254)
+createButton(frame1, "InfiniteJump", "Infinite Jump", 0.691, 0.104)
+createButton(frame1, "GodMode", "God Mode", 0.691, 0.254)
+createButton(frame1, "JumpBoost", "Jump Boost", 0.025, 0.402)
+createButton(frame1, "TPAll", "TP all", 0.356, 0.402)
+createButton(frame1, "Fling", "Fling", 0.691, 0.402)
+createButton(frame1, "NoClip", "No Clip", 0.025, 0.549)
+createButton(frame1, "ChangeSize", "Change Size", 0.358, 0.549)
+createButton(frame1, "Brick", "Brick", 0.691, 0.549)
+createButton(frame1, "ThrowBrick", "Trow Brick", 0.025, 0.693)
+createButton(frame1, "Decal", "Decal and Skybox", 0.358, 0.693)
+createButton(frame1, "Empty", "Empty", 0.691, 0.693)
+
+-- Frame1 Navigation Buttons
+local nextBtn = Instance.new("TextButton")
+nextBtn.Name = "Next"
+nextBtn.Parent = frame1
+nextBtn.Size = UDim2.new(0, 93, 0, 45)
+nextBtn.Position = UDim2.new(0.739, 0, 0.866, 0)
+nextBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+nextBtn.Text = "Next"
+nextBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+nextBtn.TextScaled = false
+
+local closeBtn1 = Instance.new("TextButton")
+closeBtn1.Name = "Close"
+closeBtn1.Parent = frame1
+closeBtn1.Size = UDim2.new(0, 101, 0, 45)
+closeBtn1.Position = UDim2.new(0.025, 0, 0.866, 0)
+closeBtn1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+closeBtn1.Text = "Close"
+closeBtn1.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeBtn1.TextScaled = false
+
+-- === Frame2 ===
+local frame2 = Instance.new("Frame")
+frame2.Name = "Frame2"
+frame2.Parent = gui
+frame2.Size = UDim2.new(0, 396, 0, 479)
+frame2.Position = UDim2.new(0.009, 0, 0.079, 0)
+frame2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame2.Visible = false
+
+local nameLabel2 = Instance.new("TextLabel")
+nameLabel2.Name = "Name"
+nameLabel2.Parent = frame2
+nameLabel2.Size = UDim2.new(0, 395, 0, 31)
+nameLabel2.Position = UDim2.new(0.002, 0, -0.077, 0)
+nameLabel2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+nameLabel2.Text = "Unknown-0 V2 made by RedViper24446"
+nameLabel2.TextColor3 = Color3.fromRGB(255, 255, 255)
+nameLabel2.TextScaled = false
+
+local page2Label = Instance.new("TextLabel")
+page2Label.Name = "Page2"
+page2Label.Parent = frame2
+page2Label.Size = UDim2.new(0, 171, 0, 34)
+page2Label.Position = UDim2.new(0.280, 0, 0, 0)
+page2Label.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+page2Label.Text = "Weapon Page"
+page2Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+page2Label.TextScaled = false
+
+-- Frame2 buttons
+local function createWeaponButton(parent, name, text, posX, posY)
+	local btn = Instance.new("TextButton")
+	btn.Name = name
+	btn.Parent = parent
+	btn.Size = UDim2.new(0, 112, 0, 50)
+	btn.Position = UDim2.new(posX, 0, posY, 0)
+	btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	btn.Text = text
+	btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	btn.TextScaled = false
+	return btn
+end
+
+createWeaponButton(frame2, "Firebrand", "Firebrand", 0.032, 0.110)
+createWeaponButton(frame2, "IceDagger", "IceDagger", 0.358, 0.110)
+createWeaponButton(frame2, "Illumina", "Illumina", 0.686, 0.110)
+createWeaponButton(frame2, "DarkHeart", "Darkheart", 0.032, 0.256)
+createWeaponButton(frame2, "VenomShank", "VenomShank", 0.358, 0.256)
+createWeaponButton(frame2, "Windforce", "Windforce", 0.686, 0.256)
+createWeaponButton(frame2, "GhostWalker", "GhostWalker", 0.032, 0.402)
+createWeaponButton(frame2, "LinkedSword", "Linked Sword", 0.358, 0.402)
+createWeaponButton(frame2, "Dual", "Illumina and Darkheart", 0.686, 0.402)
+createWeaponButton(frame2, "Laser", "Laser", 0.032, 0.551)
+createWeaponButton(frame2, "Fireball", "Fireball", 0.358, 0.551)
+createWeaponButton(frame2, "SubspaceTripmine", "Subspace Tripmine", 0.686, 0.551)
+createWeaponButton(frame2, "OrbitObject", "Orbit Objects", 0.032, 0.695)
+createWeaponButton(frame2, "Lightning", "Lightning", 0.358, 0.695)
+createWeaponButton(frame2, "Clone", "Clone", 0.689, 0.695)
+
+-- Frame2 navigation buttons
+local backBtn = Instance.new("TextButton")
+backBtn.Name = "Back"
+backBtn.Parent = frame2
+backBtn.Size = UDim2.new(0, 89, 0, 45)
+backBtn.Position = UDim2.new(0.746, 0, 0.866, 0)
+backBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+backBtn.Text = "Back"
+backBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+backBtn.TextScaled = false
+
+local closeBtn2 = Instance.new("TextButton")
+closeBtn2.Name = "Close"
+closeBtn2.Parent = frame2
+closeBtn2.Size = UDim2.new(0, 91, 0, 45)
+closeBtn2.Position = UDim2.new(0.033, 0, 0.866, 0)
+closeBtn2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+closeBtn2.Text = "Close"
+closeBtn2.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeBtn2.TextScaled = false
+
+-- Open button
+local openBtn = Instance.new("TextButton")
+openBtn.Name = "Open"
+openBtn.Parent = gui
+openBtn.Size = UDim2.new(0, 148, 0, 39)
+openBtn.Position = UDim2.new(0.009, 0, 0.910, 0)
+openBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+openBtn.Text = "Open"
+openBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+openBtn.TextScaled = false
+
+-- === Draggable frames ===
+local frames = {frame1, frame2}
+
+for _, frame in pairs(frames) do
+	local dragging = false
+	local dragInput
+	local dragStart
+	local startPos
+
+	local function update(input)
+		local delta = input.Position - dragStart
+		frame.Position = UDim2.new(
+			startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y
+		)
+	end
+
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	frame.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+
+	RunService.RenderStepped:Connect(function()
+		if dragging and dragInput then
+			update(dragInput)
+		end
+	end)
+end
+
+-- === Button functionality ===
+openBtn.MouseButton1Click:Connect(function()
+	frame1.Visible = true
+	frame2.Visible = false
+end)
+
+closeBtn1.MouseButton1Click:Connect(function()
+	frame1.Visible = false
+end)
+
+closeBtn2.MouseButton1Click:Connect(function()
+	frame2.Visible = false
+end)
+
+nextBtn.MouseButton1Click:Connect(function()
+	frame1.Visible = false
+	frame2.Visible = true
+end)
+
+backBtn.MouseButton1Click:Connect(function()
+	frame2.Visible = false
+	frame1.Visible = true
+end)
+
+local button = script.Parent
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local brickPart = nil
+local isBrick = false
+
+button.MouseButton1Click:Connect(function()
+	if not isBrick then
+		-- Turn into a small brick
+		isBrick = true
+
+		-- Create the brick
+		brickPart = Instance.new("Part")
+		brickPart.Size = Vector3.new(2, 1, 2) -- Small brick
+		brickPart.Color = Color3.fromRGB(200, 200, 200) -- Red color
+		brickPart.Anchored = false
+		brickPart.CanCollide = true
+		brickPart.Name = "BrickForm"
+		brickPart.Parent = workspace
+
+		-- Move the brick to your position
+		brickPart.CFrame = character.HumanoidRootPart.CFrame
+
+		-- Attach player to brick
+		local weld = Instance.new("WeldConstraint")
+		weld.Part0 = brickPart
+		weld.Part1 = character.HumanoidRootPart
+		weld.Parent = brickPart
+
+		-- Make your body invisible
+		for _, part in pairs(character:GetDescendants()) do
+			if part:IsA("BasePart") then
+				part.Transparency = 1
+			end
+		end
+
+	else
+		-- Turn back to normal
+		isBrick = false
+
+		-- Remove brick
+		if brickPart then
+			brickPart:Destroy()
+			brickPart = nil
+		end
+
+		-- Make your body visible again
+		for _, part in pairs(character:GetDescendants()) do
+			if part:IsA("BasePart") then
+				part.Transparency = 0
+			end
+		end
+	end
+end)
+
+local button = script.Parent -- The GUI button
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local scale = 1.5 -- How big to make the player
+local scaled = false -- Tracks if player is scaled
+local originalSizes = {}
+
+-- Store original sizes of all body parts
+for _, part in ipairs(character:GetChildren()) do
+	if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+		originalSizes[part.Name] = part.Size
+	end
+end
+
+button.MouseButton1Click:Connect(function()
+	if scaled then
+		-- Restore original size
+		for _, part in ipairs(character:GetChildren()) do
+			if part:IsA("BasePart") and originalSizes[part.Name] then
+				part.Size = originalSizes[part.Name]
+			end
+		end
+		scaled = false
+	else
+		-- Scale up parts
+		for _, part in ipairs(character:GetChildren()) do
+			if part:IsA("BasePart") and originalSizes[part.Name] then
+				part.Size = originalSizes[part.Name] * scale
+			end
+		end
+		scaled = true
+	end
+end)
+
+local player = game.Players.LocalPlayer
+local RunService = game:GetService("RunService")
+local Debris = game:GetService("Debris")
+
+-- Reference your existing GUI button
+local toggleButton = script.Parent
+
+-- Create ScreenGui and Main Frame
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "DecalSkyboxGUI"
+screenGui.Parent = player:WaitForChild("PlayerGui")
+
+local mainFrame = Instance.new("Frame")
+mainFrame.Name = "MainFrame"
+mainFrame.Size = UDim2.new(0, 300, 0, 250)
+mainFrame.Position = UDim2.new(0.5, -150, 0.5, -125)
+mainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+mainFrame.BorderSizePixel = 0
+mainFrame.Active = true
+mainFrame.Draggable = true
+mainFrame.Visible = false -- start hidden
+mainFrame.Parent = screenGui
+
+-- ===== Decal Spam Section =====
+local decalLabel = Instance.new("TextLabel")
+decalLabel.Size = UDim2.new(0, 280, 0, 20)
+decalLabel.Position = UDim2.new(0.5, -140, 0, 10)
+decalLabel.Text = "Decal Spam"
+decalLabel.TextColor3 = Color3.new(1,1,1)
+decalLabel.BackgroundTransparency = 1
+decalLabel.TextScaled = true
+decalLabel.Parent = mainFrame
+
+local decalInput = Instance.new("TextBox")
+decalInput.Size = UDim2.new(0, 250, 0, 40)
+decalInput.Position = UDim2.new(0.5, -125, 0, 35)
+decalInput.PlaceholderText = "Enter Decal ID"
+decalInput.ClearTextOnFocus = false
+decalInput.Parent = mainFrame
+
+local decalToggle = Instance.new("TextButton")
+decalToggle.Size = UDim2.new(0, 150, 0, 40)
+decalToggle.Position = UDim2.new(0.5, -75, 0, 80)
+decalToggle.Text = "Decal Spam: OFF"
+decalToggle.Parent = mainFrame
+
+local spamActive = false
+local spamRate = 0.2
+local spawnDistance = 10
+
+decalToggle.MouseButton1Click:Connect(function()
+	spamActive = not spamActive
+	decalToggle.Text = spamActive and "Decal Spam: ON" or "Decal Spam: OFF"
+end)
+
+-- ===== Skybox Section =====
+local skyLabel = Instance.new("TextLabel")
+skyLabel.Size = UDim2.new(0, 280, 0, 20)
+skyLabel.Position = UDim2.new(0.5, -140, 0, 135)
+skyLabel.Text = "Skybox Changer"
+skyLabel.TextColor3 = Color3.new(1,1,1)
+skyLabel.BackgroundTransparency = 1
+skyLabel.TextScaled = true
+skyLabel.Parent = mainFrame
+
+local skyInput = Instance.new("TextBox")
+skyInput.Size = UDim2.new(0, 250, 0, 40)
+skyInput.Position = UDim2.new(0.5, -125, 0, 160)
+skyInput.PlaceholderText = "Enter Skybox ID"
+skyInput.ClearTextOnFocus = false
+skyInput.Parent = mainFrame
+
+local skyButton = Instance.new("TextButton")
+skyButton.Size = UDim2.new(0, 150, 0, 40)
+skyButton.Position = UDim2.new(0.5, -75, 0, 205)
+skyButton.Text = "Apply Skybox"
+skyButton.Parent = mainFrame
+
+-- ===== Functions =====
+local function spawnDecal(decalId)
+	if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+		local hrp = player.Character.HumanoidRootPart
+		local part = Instance.new("Part")
+		part.Size = Vector3.new(0.1,0.1,0.1)
+		part.Transparency = 1
+		part.Anchored = true
+		part.CanCollide = false
+		part.Position = hrp.Position + Vector3.new(math.random(-spawnDistance,spawnDistance), math.random(5,15), math.random(-spawnDistance,spawnDistance))
+		part.Parent = workspace
+
+		local billboard = Instance.new("BillboardGui")
+		billboard.Size = UDim2.new(0,100,0,100)
+		billboard.AlwaysOnTop = true
+		billboard.Adornee = part
+		billboard.Parent = part
+
+		local imageLabel = Instance.new("ImageLabel")
+		imageLabel.Size = UDim2.new(1,0,1,0)
+		imageLabel.BackgroundTransparency = 1
+		imageLabel.Image = "rbxassetid://"..decalId
+		imageLabel.Parent = billboard
+
+		Debris:AddItem(part, 5)
+	end
+end
+
+local function applySkybox(id)
+	local oldSky = workspace:FindFirstChildOfClass("Sky")
+	if oldSky then oldSky:Destroy() end
+	local newSky = Instance.new("Sky")
+	newSky.SkyboxBk = "rbxassetid://"..id
+	newSky.SkyboxDn = "rbxassetid://"..id
+	newSky.SkyboxFt = "rbxassetid://"..id
+	newSky.SkyboxLf = "rbxassetid://"..id
+	newSky.SkyboxRt = "rbxassetid://"..id
+	newSky.SkyboxUp = "rbxassetid://"..id
+	newSky.Parent = workspace
+end
+
+skyButton.MouseButton1Click:Connect(function()
+	local id = skyInput.Text
+	if id ~= "" then
+		applySkybox(id)
+	end
+end)
+
+-- Decal spam loop
+spawn(function()
+	while true do
+		if spamActive and mainFrame.Visible then
+			local decalId = decalInput.Text
+			if decalId ~= "" then
+				spawnDecal(decalId)
+			end
+		end
+		wait(spamRate)
+	end
+end)
+
+-- ===== Existing button toggles GUI =====
+toggleButton.MouseButton1Click:Connect(function()
+	mainFrame.Visible = not mainFrame.Visible
+	toggleButton.Text = mainFrame.Visible and "Close Panel" or "Open Panel"
+end)
+
+-- Fling Script with Radius and GUI toggle text
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local player = Players.LocalPlayer
+
+local flingActive = false
+local flingForce = 200 -- adjust force
+local flingRadius = 20 -- studs around your character
+
+-- Example GUI button
+local guiButton = script.Parent
+guiButton.Text = "Fling: OFF" -- initial text
+
+-- Toggle function
+local function toggleFling()
+	flingActive = not flingActive
+	guiButton.Text = flingActive and "Fling: ON" or "Fling: OFF"
+	print("Fling is now", flingActive and "ON" or "OFF")
+end
+
+-- Fling logic
+RunService.Stepped:Connect(function()
+	if flingActive then
+		local origin = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+		if not origin then return end
+
+		for _, plr in pairs(Players:GetPlayers()) do
+			if plr ~= player and plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then
+				local hrp = plr.Character.HumanoidRootPart
+				local distance = (hrp.Position - origin.Position).Magnitude
+
+				if distance <= flingRadius then
+					local bodyVelocity = Instance.new("BodyVelocity")
+					bodyVelocity.Velocity = Vector3.new(
+						math.random(-flingForce, flingForce),
+						math.random(50, flingForce),
+						math.random(-flingForce, flingForce)
+					)
+					bodyVelocity.MaxForce = Vector3.new(1e5, 1e5, 1e5)
+					bodyVelocity.Parent = hrp
+
+					game.Debris:AddItem(bodyVelocity, 0.1)
+				end
+			end
+		end
+	end
+end)
+
+-- Connect GUI button
+guiButton.MouseButton1Click:Connect(toggleFling)
+
+-- Fly Toggle Script
+local button = script.Parent
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local userInputService = game:GetService("UserInputService")
+local runService = game:GetService("RunService")
+
+local flying = false
+local speed = 500 -- Fly speed
+local bodyGyro, bodyVelocity
+local moveDirection = Vector3.new()
+
+-- Movement control
+userInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+	if input.KeyCode == Enum.KeyCode.W then moveDirection = moveDirection + Vector3.new(0,0,-1) end
+	if input.KeyCode == Enum.KeyCode.S then moveDirection = moveDirection + Vector3.new(0,0,1) end
+	if input.KeyCode == Enum.KeyCode.A then moveDirection = moveDirection + Vector3.new(-1,0,0) end
+	if input.KeyCode == Enum.KeyCode.D then moveDirection = moveDirection + Vector3.new(1,0,0) end
+	if input.KeyCode == Enum.KeyCode.Space then moveDirection = moveDirection + Vector3.new(0,1,0) end
+	if input.KeyCode == Enum.KeyCode.LeftShift then moveDirection = moveDirection + Vector3.new(0,-1,0) end
+end)
+
+userInputService.InputEnded:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.W then moveDirection = moveDirection - Vector3.new(0,0,-1) end
+	if input.KeyCode == Enum.KeyCode.S then moveDirection = moveDirection - Vector3.new(0,0,1) end
+	if input.KeyCode == Enum.KeyCode.A then moveDirection = moveDirection - Vector3.new(-1,0,0) end
+	if input.KeyCode == Enum.KeyCode.D then moveDirection = moveDirection - Vector3.new(1,0,0) end
+	if input.KeyCode == Enum.KeyCode.Space then moveDirection = moveDirection - Vector3.new(0,1,0) end
+	if input.KeyCode == Enum.KeyCode.LeftShift then moveDirection = moveDirection - Vector3.new(0,-1,0) end
+end)
+
+-- Toggle Fly
+button.MouseButton1Click:Connect(function()
+	flying = not flying
+	button.Text = flying and "Fly: ON" or "Fly: OFF"
+
+	if flying then
+		-- Add BodyMover objects
+		bodyGyro = Instance.new("BodyGyro", humanoidRootPart)
+		bodyVelocity = Instance.new("BodyVelocity", humanoidRootPart)
+		bodyGyro.P = 9e4
+		bodyGyro.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
+		bodyGyro.CFrame = humanoidRootPart.CFrame
+
+		bodyVelocity.Velocity = Vector3.new()
+		bodyVelocity.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+	else
+		-- Remove when fly is OFF
+		if bodyGyro then bodyGyro:Destroy() end
+		if bodyVelocity then bodyVelocity:Destroy() end
+	end
+end)
+
+-- Fly logic
+runService.RenderStepped:Connect(function()
+	if flying then
+		local camera = workspace.CurrentCamera
+		bodyGyro.CFrame = camera.CFrame
+		if moveDirection.Magnitude > 0 then
+			bodyVelocity.Velocity = camera.CFrame:VectorToWorldSpace(moveDirection.Unit * speed)
+		else
+			bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+		end
+	end
+end)
+
+local button = script.Parent
+local player = game.Players.LocalPlayer
+local godMode = false
+
+button.MouseButton1Click:Connect(function()
+	godMode = not godMode
+	button.Text = godMode and "God Mode: ON" or "God Mode: OFF"
+	if godMode then
+		player.Character:FindFirstChildOfClass("Humanoid").Health = math.huge
+	else
+		player.Character:FindFirstChildOfClass("Humanoid").Health = 100
+	end
+end)
+
+button.Text = "God Mode: OFF"
+
+local button = script.Parent
+local player = game.Players.LocalPlayer
+local infiniteJump = false
+
+button.MouseButton1Click:Connect(function()
+	infiniteJump = not infiniteJump
+	button.Text = infiniteJump and "Infinite Jump: ON" or "Infinite Jump: OFF"
+end)
+
+game:GetService("UserInputService").JumpRequest:Connect(function()
+	if infiniteJump then
+		player.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+	end
+end)
+
+button.Text = "Infinite Jump: OFF"
+
+local button = script.Parent -- The TextButton in your GUI
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local invisible = false
+
+-- Function to make player invisible or visible
+local function setInvisible(state)
+	for _, part in pairs(character:GetDescendants()) do
+		if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+			part.Transparency = state and 1 or 0
+			if part:FindFirstChild("face") then
+				part.face.Transparency = state and 1 or 0
+			end
+		elseif part:IsA("Decal") then
+			part.Transparency = state and 1 or 0
+		end
+	end
+end
+
+-- Button Click Event
+button.MouseButton1Click:Connect(function()
+	invisible = not invisible  -- Toggle ON/OFF
+	setInvisible(invisible)
+
+	-- Update button text
+	if invisible then
+		button.Text = "Invisible: ON"
+	else
+		button.Text = "Invisible: OFF"
+	end
+end)
+
+-- Set initial text
+button.Text = "Invisible: OFF"
+
+local button = script.Parent
+local boosted = false
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+button.MouseButton1Click:Connect(function()
+	if boosted then
+		-- Turn OFF jump boost
+		humanoid.UseJumpPower = true
+		humanoid.JumpPower = 50 -- Default jump power
+		button.Text = "Jump Boost OFF"
+		boosted = false
+	else
+		-- Turn ON jump boost
+		humanoid.UseJumpPower = true
+		humanoid.JumpPower = 150 -- Higher jump
+		button.Text = "Jump Boost ON"
+		boosted = true
+	end
+end)
+
+local button = script.Parent
+local noclip = false
+local player = game.Players.LocalPlayer
+local RunService = game:GetService("RunService")
+
+button.MouseButton1Click:Connect(function()
+	noclip = not noclip
+	button.Text = noclip and "NoClip ON" or "NoClip OFF"
+end)
+
+RunService.Stepped:Connect(function()
+	if noclip then
+		for _, part in ipairs(player.Character:GetDescendants()) do
+			if part:IsA("BasePart") then
+				part.CanCollide = false
+			end
+		end
+	end
+end)
+
+local button = script.Parent
+local player = game.Players.LocalPlayer
+local speedEnabled = false
+local speed = 500
+
+button.MouseButton1Click:Connect(function()
+	speedEnabled = not speedEnabled
+	if speedEnabled then
+		button.Text = "Speed ON"
+		button.BackgroundColor3 = Color3.fromRGB(70, 150, 200)
+	else
+		button.Text = "Speed OFF"
+		button.BackgroundColor3 = Color3.fromRGB(50, 100, 150)
+	end
+end)
+
+-- Velocity system
+game:GetService("RunService").Heartbeat:Connect(function()
+	if speedEnabled then
+		local char = player.Character
+		if char and char:FindFirstChild("HumanoidRootPart") then
+			local hrp = char.HumanoidRootPart
+			local moveDirection = char:FindFirstChild("Humanoid").MoveDirection
+			if moveDirection.Magnitude > 0 then
+				hrp.Velocity = moveDirection * speed
+			else
+				hrp.Velocity = Vector3.new(0, hrp.Velocity.Y, 0)
+			end
+		end
+	end
+end)
+
+local button = script.Parent
+
+button.MouseButton1Click:Connect(function()
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local root = character:WaitForChild("HumanoidRootPart")
+
+	for _, otherPlayer in pairs(game.Players:GetPlayers()) do
+		if otherPlayer ~= player then
+			local otherChar = otherPlayer.Character
+			if otherChar and otherChar:FindFirstChild("HumanoidRootPart") then
+				otherChar:MoveTo(root.Position + Vector3.new(math.random(-5, 5), 0, math.random(-5, 5)))
+			end
+		end
+	end
+end)
+
+local button = script.Parent
+local userInputService = game:GetService("UserInputService")
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+local teleportEnabled = false  -- OFF by default
+
+-- Toggle teleport ON/OFF when the button is clicked
+button.MouseButton1Click:Connect(function()
+	teleportEnabled = not teleportEnabled
+	if teleportEnabled then
+		button.Text = "Teleport: ON"
+	else
+		button.Text = "Teleport: OFF"
+	end
+end)
+
+-- Detect mouse click and teleport if enabled
+mouse.Button1Down:Connect(function()
+	if teleportEnabled then
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+		humanoidRootPart.CFrame = CFrame.new(mouse.Hit.Position + Vector3.new(0, 3, 0))
+	end
+end)
+
+-- LocalScript inside the TextButton
+local button = script.Parent
+local player = game.Players.LocalPlayer
+
+button.MouseButton1Click:Connect(function()
+	if not player.Character or not player.Character:FindFirstChild("Head") then return end
+
+	-- Create the brick
+	local brick = Instance.new("Part")
+	brick.Size = Vector3.new(2, 1, 1)
+	brick.BrickColor = BrickColor.new("Grey")
+	brick.Shape = Enum.PartType.Block
+	brick.Position = player.Character.Head.Position + (player.Character.Head.CFrame.LookVector * 5)
+	brick.Anchored = false
+	brick.CanCollide = true
+	brick.Parent = workspace
+
+	-- Apply force to throw it forward
+	local bv = Instance.new("BodyVelocity")
+	bv.Velocity = player.Character.Head.CFrame.LookVector * 100 -- speed
+	bv.MaxForce = Vector3.new(1e5, 1e5, 1e5)
+	bv.Parent = brick
+
+	-- Damage on touch
+	brick.Touched:Connect(function(hit)
+		local character = hit.Parent
+		local humanoid = character:FindFirstChildWhichIsA("Humanoid")
+		if humanoid and character ~= player.Character then
+			humanoid:TakeDamage(30) -- adjust damage here
+			brick:Destroy() -- destroy brick after hitting
+		end
+	end)
+
+	-- Remove brick after 5 seconds if it doesn't hit
+	game:GetService("Debris"):AddItem(brick, 5)
+end)
+
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local player = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+
+local cloneGUI = nil
+local clones = {} -- only clones
+local activeBody = player.Character -- default: your real character
+local moveDir = Vector3.new(0,0,0)
+local speed = 16
+
+-- Enable or disable real character movement
+local function setCharacterControl(enabled)
+	local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+	if humanoid then
+		humanoid.WalkSpeed = enabled and 16 or 0
+		humanoid.JumpPower = enabled and 50 or 0
+	end
+end
+
+-- Control a body
+local function controlBody(body)
+	if not body then return end
+
+	if body == player.Character then
+		setCharacterControl(true)
+	else
+		setCharacterControl(false)
+	end
+
+	activeBody = body
+	moveDir = Vector3.new(0,0,0) -- RESET movement to prevent auto-motion
+
+	local hrp = body:FindFirstChild("HumanoidRootPart")
+	if hrp then
+		camera.CameraSubject = hrp
+	end
+end
+
+-- GUI creation
+local function createCloneGUI()
+	if cloneGUI then return cloneGUI end
+
+	local gui = Instance.new("ScreenGui")
+	gui.Parent = player:WaitForChild("PlayerGui")
+
+	local frame = Instance.new("Frame")
+	frame.Size = UDim2.new(0,220,0,180)
+	frame.Position = UDim2.new(0.4,0,0.4,0)
+	frame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+	frame.Active = true
+	frame.Draggable = true
+	frame.Parent = gui
+
+	local spawnBtn = Instance.new("TextButton")
+	spawnBtn.Size = UDim2.new(1,-20,0,40)
+	spawnBtn.Position = UDim2.new(0,10,0,20)
+	spawnBtn.Text = "Spawn Clone"
+	spawnBtn.Parent = frame
+
+	local deleteBtn = Instance.new("TextButton")
+	deleteBtn.Size = UDim2.new(1,-20,0,40)
+	deleteBtn.Position = UDim2.new(0,10,0,70)
+	deleteBtn.Text = "Delete Last Clone"
+	deleteBtn.Parent = frame
+
+	local swapBtn = Instance.new("TextButton")
+	swapBtn.Size = UDim2.new(1,-20,0,40)
+	swapBtn.Position = UDim2.new(0,10,0,120)
+	swapBtn.Text = "Swap Body"
+	swapBtn.Parent = frame
+
+	-- Spawn clone
+	local function spawnClone()
+		local char = player.Character
+		if not char then return end
+		char.Archivable = true
+		local clone = char:Clone()
+		clone.Name = player.Name.."_Clone"..(#clones+1)
+		clone.Parent = workspace
+
+		local hrp = clone:FindFirstChild("HumanoidRootPart")
+		if hrp then hrp.CFrame = char.HumanoidRootPart.CFrame * CFrame.new(5,0,0) end
+
+		table.insert(clones, clone)
+		controlBody(clone)
+	end
+
+	-- Delete clone
+	local function deleteClone()
+		if #clones == 0 then return end
+		local clone = table.remove(clones)
+		if clone then
+			if activeBody == clone then
+				controlBody(player.Character)
+			end
+			clone:Destroy()
+		end
+	end
+
+	-- Swap body
+	local function swapBody()
+		if #clones == 0 then
+			controlBody(player.Character)
+			return
+		end
+
+		local currentIndex = table.find(clones, activeBody)
+		if currentIndex then
+			local nextIndex = currentIndex + 1
+			if nextIndex > #clones then
+				controlBody(player.Character)
+			else
+				controlBody(clones[nextIndex])
+			end
+		else
+			controlBody(clones[1])
+		end
+	end
+
+	spawnBtn.MouseButton1Click:Connect(spawnClone)
+	deleteBtn.MouseButton1Click:Connect(deleteClone)
+	swapBtn.MouseButton1Click:Connect(swapBody)
+
+	-- Movement input
+	UserInputService.InputBegan:Connect(function(input, gp)
+		if gp then return end
+		if table.find(clones, activeBody) then
+			if input.KeyCode == Enum.KeyCode.W then moveDir = moveDir + Vector3.new(0,0,-1) end
+			if input.KeyCode == Enum.KeyCode.S then moveDir = moveDir + Vector3.new(0,0,1) end
+			if input.KeyCode == Enum.KeyCode.A then moveDir = moveDir + Vector3.new(-1,0,0) end
+			if input.KeyCode == Enum.KeyCode.D then moveDir = moveDir + Vector3.new(1,0,0) end
+			if input.KeyCode == Enum.KeyCode.Space then
+				local humanoid = activeBody:FindFirstChildOfClass("Humanoid")
+				if humanoid then
+					humanoid.Jump = true -- only the clone jumps
+				end
+			end
+		end
+	end)
+
+	UserInputService.InputEnded:Connect(function(input, gp)
+		if gp then return end
+		if table.find(clones, activeBody) then
+			if input.KeyCode == Enum.KeyCode.W then moveDir = moveDir - Vector3.new(0,0,-1) end
+			if input.KeyCode == Enum.KeyCode.S then moveDir = moveDir - Vector3.new(0,0,1) end
+			if input.KeyCode == Enum.KeyCode.A then moveDir = moveDir - Vector3.new(-1,0,0) end
+			if input.KeyCode == Enum.KeyCode.D then moveDir = moveDir - Vector3.new(1,0,0) end
+		end
+	end)
+
+	-- Clone movement loop using Humanoid:Move()
+	RunService.RenderStepped:Connect(function()
+		if activeBody and table.find(clones, activeBody) then
+			local humanoid = activeBody:FindFirstChildOfClass("Humanoid")
+			if humanoid then
+				local camCF = camera.CFrame
+				local forward = Vector3.new(camCF.LookVector.X,0,camCF.LookVector.Z)
+				local right = Vector3.new(camCF.RightVector.X,0,camCF.RightVector.Z)
+				local moveVector = (forward * (-moveDir.Z)) + (right * moveDir.X)
+
+				if moveVector.Magnitude > 0 then
+					humanoid:Move(moveVector.Unit * speed, false)
+				else
+					humanoid:Move(Vector3.new(0,0,0), false) -- stop if no keys pressed
+				end
+			end
+		end
+	end)
+
+	gui.Destroying:Connect(function()
+		cloneGUI = nil
+	end)
+
+	cloneGUI = gui
+	return gui
+end
+
+-- Toggle GUI button
+local mainGuiButton = script.Parent
+mainGuiButton.MouseButton1Click:Connect(function()
+	if cloneGUI then
+		cloneGUI:Destroy()
+	else
+		createCloneGUI()
+	end
+end)
+
+local player = game.Players.LocalPlayer
+local damageAmount = 200        -- damage to others
+local healAmount = 20          -- amount to heal player per hit
+local darkheartAssetId = 16237245280
+local sword
+
+-- Equip Darkheart
+local function equipSword()
+	if sword then sword:Destroy() end
+	sword = game:GetObjects("rbxassetid://"..darkheartAssetId)[1]
+	sword.Parent = player.Character
+
+	local rightHand = player.Character:FindFirstChild("RightHand") or player.Character:FindFirstChild("Right Arm")
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = rightHand
+	weld.Part1 = sword.Handle
+	weld.Parent = sword.Handle
+
+	-- Dark aura effect on sword
+	local darkAura = Instance.new("ParticleEmitter")
+	darkAura.Texture = "rbxassetid://241594317"  -- black/purple smoke particle
+	darkAura.Rate = 50
+	darkAura.Lifetime = NumberRange.new(1)
+	darkAura.Speed = NumberRange.new(2)
+	darkAura.Parent = sword.Handle
+
+	-- Damage and heal on touch
+	sword.Handle.Touched:Connect(function(hit)
+		if hit and hit.Parent ~= player.Character then
+			local humanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+			if humanoid then
+				-- Deal damage to target
+				humanoid:TakeDamage(damageAmount)
+
+				-- Heal the player
+				local playerHumanoid = player.Character:FindFirstChildWhichIsA("Humanoid")
+				if playerHumanoid then
+					playerHumanoid.Health = math.min(playerHumanoid.MaxHealth, playerHumanoid.Health + healAmount)
+				end
+			end
+		end
+	end)
+end
+
+-- Equip immediately
+equipSword()
+
+local player = game.Players.LocalPlayer
+
+-- Sword asset IDs
+local iluminaAssetId = 5205904516
+local darkheartAssetId = 16237245280
+
+-- Sword settings
+local iluminaDamage = 200
+local darkheartDamage = 200
+local darkheartHeal = 80
+
+-- Helper function to equip a sword with effects
+local function equipSword(assetId, handName, onTouchFunc)
+	local sword = game:GetObjects("rbxassetid://"..assetId)[1]
+	sword.Parent = player.Character
+
+	local hand = player.Character:FindFirstChild(handName) or player.Character:FindFirstChild("RightHand")
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = hand
+	weld.Part1 = sword.Handle
+	weld.Parent = sword.Handle
+
+	sword.Handle.Touched:Connect(onTouchFunc)
+	return sword
+end
+
+-- Ilumina onTouch: fast hits + light
+local function iluminaTouch(hit)
+	if hit and hit.Parent ~= player.Character then
+		local humanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+		if humanoid then
+			humanoid:TakeDamage(iluminaDamage)
+			local hrp = hit.Parent:FindFirstChild("HumanoidRootPart")
+			if hrp then
+				local light = Instance.new("PointLight")
+				light.Color = Color3.fromRGB(255, 255, 200)
+				light.Range = 10
+				light.Brightness = 5
+				light.Parent = hrp
+				game:GetService("Debris"):AddItem(light, 0.5)
+			end
+		end
+	end
+end
+
+-- Darkheart onTouch: damage + heal + dark aura
+local function darkheartTouch(hit)
+	if hit and hit.Parent ~= player.Character then
+		local humanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+		if humanoid then
+			humanoid:TakeDamage(darkheartDamage)
+
+			-- Heal player
+			local playerHumanoid = player.Character:FindFirstChildWhichIsA("Humanoid")
+			if playerHumanoid then
+				playerHumanoid.Health = math.min(playerHumanoid.MaxHealth, playerHumanoid.Health + darkheartHeal)
+			end
+
+			-- Dark aura particle
+			local hrp = hit.Parent:FindFirstChild("HumanoidRootPart")
+			if hrp then
+				local darkAura = Instance.new("ParticleEmitter")
+				darkAura.Texture = "rbxassetid://241594317"  -- dark particle
+				darkAura.Rate = 50
+				darkAura.Lifetime = NumberRange.new(1)
+				darkAura.Speed = NumberRange.new(2)
+				darkAura.Parent = hrp
+				game:GetService("Debris"):AddItem(darkAura, 1)
+			end
+		end
+	end
+end
+
+-- Equip swords
+local iluminaSword = equipSword(iluminaAssetId, "RightHand", iluminaTouch)
+local darkheartSword = equipSword(darkheartAssetId, "LeftHand", darkheartTouch)
+
+-- LocalScript inside FireballButton
+local button = script.Parent
+local player = game.Players.LocalPlayer
+local debris = game:GetService("Debris")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+
+local fireballDamage = 25
+local fireballSize = Vector3.new(2,2,2)
+local fireballSpeed = 2000  -- visual speed
+local fireballMode = false
+
+-- Function to shoot a long-range fireball
+local function shootFireball(targetPos)
+	if not player.Character or not player.Character:FindFirstChild("HumanoidRootPart") then return end
+	local hrp = player.Character.HumanoidRootPart
+	local origin = hrp.Position + Vector3.new(0,2,0)
+
+	-- Create visual fireball
+	local fireball = Instance.new("Part")
+	fireball.Size = fireballSize
+	fireball.BrickColor = BrickColor.new("Bright orange")
+	fireball.Shape = Enum.PartType.Ball
+	fireball.Material = Enum.Material.Neon
+	fireball.Anchored = true
+	fireball.CanCollide = false
+	fireball.CFrame = CFrame.new(origin)
+	fireball.Parent = workspace
+
+	local particle = Instance.new("ParticleEmitter")
+	particle.Texture = "rbxassetid://244221613"
+	particle.Lifetime = NumberRange.new(0.3)
+	particle.Rate = 200
+	particle.Speed = NumberRange.new(5)
+	particle.Parent = fireball
+
+	-- Raycast to target
+	local direction = (targetPos - origin).unit
+	local distance = 10000  -- effectively map-wide
+	local rayParams = RaycastParams.new()
+	rayParams.FilterDescendantsInstances = {player.Character}
+	rayParams.FilterType = Enum.RaycastFilterType.Blacklist
+
+	local rayResult = workspace:Raycast(origin, direction * distance, rayParams)
+	local hitPos = rayResult and rayResult.Position or (origin + direction * distance)
+	local hitPart = rayResult and rayResult.Instance
+
+	-- Tween fireball visually to the hit position
+	local tweenInfo = TweenInfo.new((origin - hitPos).Magnitude / fireballSpeed)
+	local tween = TweenService:Create(fireball, tweenInfo, {Position = hitPos})
+	tween:Play()
+	tween.Completed:Connect(function()
+		-- Damage if hit humanoid
+		if hitPart then
+			local humanoid = hitPart.Parent:FindFirstChildWhichIsA("Humanoid")
+			if humanoid then
+				humanoid:TakeDamage(fireballDamage)
+			end
+		end
+
+		-- Explosion effect
+		local explosion = Instance.new("Part")
+		explosion.Size = Vector3.new(4,4,4)
+		explosion.Position = fireball.Position
+		explosion.Anchored = true
+		explosion.CanCollide = false
+		explosion.Material = Enum.Material.Neon
+		explosion.BrickColor = BrickColor.new("Bright red")
+		explosion.Parent = workspace
+		debris:AddItem(explosion, 0.3)
+
+		fireball:Destroy()
+	end)
+end
+
+-- Toggle fireball mode
+button.MouseButton1Click:Connect(function()
+	fireballMode = not fireballMode
+	button.Text = fireballMode and "Fireball Mode: ON" or "Fireball Mode: OFF"
+end)
+
+-- Throw fireball with mouse click
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if fireballMode and input.UserInputType == Enum.UserInputType.MouseButton1 and not gameProcessed then
+		local mouse = player:GetMouse()
+		shootFireball(mouse.Hit.Position)
+	end
+end)
+
+local player = game.Players.LocalPlayer
+local baseDamage = 70        -- initial hit damage
+local fireDamage = 10         -- damage per tick
+local fireDuration = 3       -- seconds fire lasts
+local firebrandAssetId = 5212571550
+local sword
+
+-- Equip Firebrand
+local function equipFirebrand()
+	if sword then sword:Destroy() end
+	sword = game:GetObjects("rbxassetid://"..firebrandAssetId)[1]
+	sword.Parent = player.Character
+
+	local rightHand = player.Character:FindFirstChild("RightHand") or player.Character:FindFirstChild("Right Arm")
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = rightHand
+	weld.Part1 = sword.Handle
+	weld.Parent = sword.Handle
+
+	-- Fire damage and visual effect on touch
+	sword.Handle.Touched:Connect(function(hit)
+		if hit and hit.Parent ~= player.Character then
+			local humanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+			local hrp = hit.Parent:FindFirstChild("HumanoidRootPart")
+			if humanoid and hrp then
+				humanoid:TakeDamage(baseDamage)
+
+				-- Apply fire damage over time
+				spawn(function()
+					-- Create fire particle effect
+					local fireParticle = Instance.new("ParticleEmitter")
+					fireParticle.Texture = "rbxassetid://244221613" -- fire particle texture
+					fireParticle.Rate = 100
+					fireParticle.Lifetime = NumberRange.new(0.5)
+					fireParticle.Speed = NumberRange.new(5)
+					fireParticle.Parent = hrp
+
+					for i = 1, fireDuration do
+						if humanoid.Health > 0 then
+							humanoid:TakeDamage(fireDamage)
+						end
+						wait(1)
+					end
+
+					-- Remove fire particle effect
+					fireParticle:Destroy()
+				end)
+			end
+		end
+	end)
+end
+
+-- Equip immediately
+equipFirebrand()
+
+local player = game.Players.LocalPlayer
+local damageAmount = 15          -- optional base damage
+local phaseDuration = 1           -- duration of “phase” in seconds
+local ghostwalkerAssetId = 961745954
+local dagger
+
+-- Equip Ghostwalker
+local function equipGhostwalker()
+	if dagger then dagger:Destroy() end
+	dagger = game:GetObjects("rbxassetid://"..ghostwalkerAssetId)[1]
+	dagger.Parent = player.Character
+
+	local rightHand = player.Character:FindFirstChild("RightHand") or player.Character:FindFirstChild("Right Arm")
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = rightHand
+	weld.Part1 = dagger.Handle
+	weld.Parent = dagger.Handle
+
+	-- Phase effect on touch
+	dagger.Handle.Touched:Connect(function(hit)
+		if hit and hit.Parent ~= player.Character then
+			local humanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+			if humanoid then
+				humanoid:TakeDamage(damageAmount)
+
+				-- Phase target: disable movement and attack
+				local hrp = hit.Parent:FindFirstChild("HumanoidRootPart")
+				if hrp then
+					local originalSpeed = humanoid.WalkSpeed
+					local originalJump = humanoid.JumpPower
+					humanoid.WalkSpeed = 0
+					humanoid.JumpPower = 0
+
+					-- Disable tools
+					local tools = {}
+					for _, tool in pairs(hit.Parent:GetChildren()) do
+						if tool:IsA("Tool") then
+							table.insert(tools, tool)
+							tool.Parent = nil
+						end
+					end
+
+					-- Make target semi-transparent
+					local parts = {}
+					for _, part in pairs(hit.Parent:GetChildren()) do
+						if part:IsA("BasePart") then
+							table.insert(parts, {part = part, originalTransparency = part.Transparency})
+							part.Transparency = 0.5
+						end
+					end
+
+					-- Wait for phase duration
+					wait(phaseDuration)
+
+					-- Restore movement
+					if humanoid then
+						humanoid.WalkSpeed = originalSpeed
+						humanoid.JumpPower = originalJump
+					end
+
+					-- Restore tools
+					for _, tool in pairs(tools) do
+						tool.Parent = hit.Parent
+					end
+
+					-- Restore transparency
+					for _, info in pairs(parts) do
+						info.part.Transparency = info.originalTransparency
+					end
+				end
+			end
+		end
+	end)
+end
+
+-- Equip immediately
+equipGhostwalker()
+
+local player = game.Players.LocalPlayer
+local damageAmount = 30          -- optional hit damage
+local freezeDuration = 2         -- seconds target is frozen
+local iceDaggerAssetId = 99773079
+local dagger
+
+-- Equip Ice Dagger
+local function equipDagger()
+	if dagger then dagger:Destroy() end
+	dagger = game:GetObjects("rbxassetid://"..iceDaggerAssetId)[1]
+	dagger.Parent = player.Character
+
+	local rightHand = player.Character:FindFirstChild("RightHand") or player.Character:FindFirstChild("Right Arm")
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = rightHand
+	weld.Part1 = dagger.Handle
+	weld.Parent = dagger.Handle
+
+	-- Freeze and ice effect on touch
+	dagger.Handle.Touched:Connect(function(hit)
+		if hit and hit.Parent ~= player.Character then
+			local humanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+			if humanoid then
+				humanoid:TakeDamage(damageAmount)
+
+				local hrp = hit.Parent:FindFirstChild("HumanoidRootPart")
+				if hrp then
+					-- Freeze movement
+					local originalSpeed = humanoid.WalkSpeed
+					local originalJump = humanoid.JumpPower
+					humanoid.WalkSpeed = 0
+					humanoid.JumpPower = 0
+
+					-- Add ice particle effect
+					local iceParticle = Instance.new("ParticleEmitter")
+					iceParticle.Texture = "rbxassetid://241594314" -- ice particle texture
+					iceParticle.Rate = 100
+					iceParticle.Lifetime = NumberRange.new(freezeDuration)
+					iceParticle.Speed = NumberRange.new(2)
+					iceParticle.Parent = hrp
+
+					-- Wait for freeze duration
+					wait(freezeDuration)
+
+					-- Restore movement
+					if humanoid then
+						humanoid.WalkSpeed = originalSpeed
+						humanoid.JumpPower = originalJump
+					end
+
+					-- Remove ice particle
+					iceParticle:Destroy()
+				end
+			end
+		end
+	end)
+end
+
+-- Equip immediately
+equipDagger()
+
+local player = game.Players.LocalPlayer
+local damageAmount = 200           -- base damage per hit
+local iluminaAssetId = 5205904516
+local sword
+
+-- Equip Ilumina
+local function equipSword()
+	if sword then sword:Destroy() end
+	sword = game:GetObjects("rbxassetid://"..iluminaAssetId)[1]
+	sword.Parent = player.Character
+
+	local rightHand = player.Character:FindFirstChild("RightHand") or player.Character:FindFirstChild("Right Arm")
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = rightHand
+	weld.Part1 = sword.Handle
+	weld.Parent = sword.Handle
+
+	-- Fast damage on touch with light effect
+	sword.Handle.Touched:Connect(function(hit)
+		if hit and hit.Parent ~= player.Character then
+			local humanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+			if humanoid then
+				humanoid:TakeDamage(damageAmount)
+
+				-- Add light effect
+				local hrp = hit.Parent:FindFirstChild("HumanoidRootPart")
+				if hrp then
+					local light = Instance.new("PointLight")
+					light.Color = Color3.fromRGB(255, 255, 200) -- bright yellowish-white
+					light.Range = 10
+					light.Brightness = 5
+					light.Parent = hrp
+					game:GetService("Debris"):AddItem(light, 0.5) -- remove after 0.5 sec
+				end
+			end
+		end
+	end)
+end
+
+-- Equip immediately
+equipSword()
+
+-- LocalScript inside TextButton
+local button = script.Parent
+local player = game.Players.LocalPlayer
+local RunService = game:GetService("RunService")
+
+local laserActive = false
+local laserPart
+local laserConnection
+
+-- Adjustable parameters
+local laserRange = 500 -- how far the laser reaches
+local laserDamage = 5 -- damage per frame
+local eyeOffset = Vector3.new(0, 0.5, 0.5) -- adjust to match eyes
+
+-- Function to get eye position
+local function getEyePosition(character)
+	local head = character:FindFirstChild("Head")
+	if not head then return Vector3.new() end
+	return head.Position + eyeOffset
+end
+
+-- Function to start laser
+local function startLaser()
+	if not player.Character then return end
+	local mouse = player:GetMouse()
+
+	-- Create laser part
+	laserPart = Instance.new("Part")
+	laserPart.Size = Vector3.new(0.2, 0.2, laserRange)
+	laserPart.BrickColor = BrickColor.new("Bright red")
+	laserPart.Anchored = true
+	laserPart.CanCollide = false
+	laserPart.Material = Enum.Material.Neon
+	laserPart.Parent = workspace
+
+	-- Update laser every frame
+	laserConnection = RunService.Heartbeat:Connect(function()
+		local eyePos = getEyePosition(player.Character)
+		local direction = (mouse.Hit.Position - eyePos).unit
+		laserPart.CFrame = CFrame.new(eyePos + direction * (laserRange/2), eyePos + direction * laserRange)
+
+		-- Damage ray
+		local ray = Ray.new(eyePos, direction * laserRange)
+		local hitPart, hitPos = workspace:FindPartOnRay(ray, player.Character)
+		if hitPart then
+			local humanoid = hitPart.Parent:FindFirstChildWhichIsA("Humanoid")
+			if humanoid then
+				humanoid:TakeDamage(laserDamage)
+			end
+		end
+	end)
+end
+
+-- Function to stop laser
+local function stopLaser()
+	if laserConnection then
+		laserConnection:Disconnect()
+		laserConnection = nil
+	end
+	if laserPart then
+		laserPart:Destroy()
+		laserPart = nil
+	end
+end
+
+-- Toggle laser on button click
+button.MouseButton1Click:Connect(function()
+	laserActive = not laserActive
+	if laserActive then
+		startLaser()
+		button.Text = "Laser: ON"
+	else
+		stopLaser()
+		button.Text = "Laser: OFF"
+	end
+end)
+
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local lightningEnabled = false -- Toggle state
+local debris = game:GetService("Debris")
+
+-- Function to create a realistic lightning bolt
+local function createLightning(position)
+	local segments = 8
+	local lastPos = position + Vector3.new(0, 50, 0) -- Start high in the sky
+	local boltParts = {}
+
+	-- Create random zigzag segments
+	for i = 1, segments do
+		local newPos = position + Vector3.new(math.random(-3, 3), 50 - (i * 6), math.random(-3, 3))
+		local part = Instance.new("Part")
+		part.Anchored = true
+		part.CanCollide = false
+		part.Material = Enum.Material.Neon
+		part.Color = Color3.fromRGB(255, 255, 255)
+		part.Size = Vector3.new(0.3, (lastPos - newPos).Magnitude, 0.3)
+		part.CFrame = CFrame.new((lastPos + newPos) / 2, newPos)
+		part.Parent = workspace
+		table.insert(boltParts, part)
+		lastPos = newPos
+	end
+
+	-- Add sparks at impact
+	local explosion = Instance.new("Explosion")
+	explosion.Position = position
+	explosion.BlastRadius = 0
+	explosion.Parent = workspace
+
+	-- Add thunder sound
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://138218622" -- Thunder sound
+	sound.Volume = 5
+	sound.PlayOnRemove = true
+	sound.Parent = workspace
+	sound:Destroy()
+
+	-- Screen flash effect
+	local gui = Instance.new("ScreenGui", player.PlayerGui)
+	gui.IgnoreGuiInset = true
+	local flash = Instance.new("Frame", gui)
+	flash.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	flash.Size = UDim2.new(1, 0, 1, 0)
+	flash.BackgroundTransparency = 0
+	flash.ZIndex = 10
+
+	game:GetService("TweenService"):Create(flash, TweenInfo.new(0.3), {BackgroundTransparency = 1}):Play()
+	debris:AddItem(gui, 0.5)
+
+	-- Damage nearby players
+	for _, target in pairs(game.Players:GetPlayers()) do
+		if target.Character and target.Character:FindFirstChild("Humanoid") then
+			local humanoid = target.Character.Humanoid
+			local root = target.Character:FindFirstChild("HumanoidRootPart")
+			if root and (root.Position - position).Magnitude <= 12 then
+				humanoid:TakeDamage(70)
+			end
+		end
+	end
+
+	-- Remove lightning parts after short time
+	for _, part in ipairs(boltParts) do
+		debris:AddItem(part, 0.2)
+	end
+end
+
+-- Toggle when button clicked
+script.Parent.MouseButton1Click:Connect(function()
+	lightningEnabled = not lightningEnabled
+	script.Parent.Text = lightningEnabled and "Lightning ON" or "Lightning OFF"
+end)
+
+-- When enabled, click to strike
+mouse.Button1Down:Connect(function()
+	if lightningEnabled then
+		createLightning(mouse.Hit.Position)
+	end
+end)
+
+local player = game.Players.LocalPlayer
+local baseDamage = 15            -- damage to primary target
+local chainDamage = 0.5           -- damage to nearby targets
+local chainRadius = 10           -- studs around target for chain
+local linkedSwordAssetId = 7028556002
+local sword
+
+-- Equip Linked Sword
+local function equipSword()
+	if sword then sword:Destroy() end
+	sword = game:GetObjects("rbxassetid://"..linkedSwordAssetId)[1]
+	sword.Parent = player.Character
+
+	local rightHand = player.Character:FindFirstChild("RightHand") or player.Character:FindFirstChild("Right Arm")
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = rightHand
+	weld.Part1 = sword.Handle
+	weld.Parent = sword.Handle
+
+	-- Damage and chain effect on touch
+	sword.Handle.Touched:Connect(function(hit)
+		if hit and hit.Parent ~= player.Character then
+			local primaryHumanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+			if primaryHumanoid then
+				primaryHumanoid:TakeDamage(baseDamage)
+
+				-- Chain damage to nearby players
+				for _, otherPlayer in pairs(game.Players:GetPlayers()) do
+					if otherPlayer.Character and otherPlayer.Character:FindFirstChild("HumanoidRootPart") then
+						local hrp = otherPlayer.Character.HumanoidRootPart
+						if hrp.Position ~= hit.Position and (hrp.Position - hit.Position).magnitude <= chainRadius then
+							local humanoid = otherPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+							if humanoid then
+								humanoid:TakeDamage(chainDamage)
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+end
+
+-- Equip immediately
+equipSword()
+
+-- Settings
+local orbitDistance = 8         -- How far objects orbit from you
+local orbitSpeed = 3            -- Speed of orbit
+local flingForce = 10000        -- Force applied to fling others
+local objectCount = 3           -- How many objects orbit
+local orbitPartSize = Vector3.new(2,2,2) -- Size of orbiting parts
+
+-- Services
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+-- GUI Button Setup
+local button = script.Parent -- Your existing GUI button
+local enabled = false
+
+-- Table for orbiting objects
+local orbitObjects = {}
+
+-- Function to create orbiting objects
+local function createOrbitObjects()
+	for i = 1, objectCount do
+		local part = Instance.new("Part")
+		part.Size = orbitPartSize
+		part.Anchored = false
+		part.CanCollide = true
+		part.Massless = true
+		part.Shape = Enum.PartType.Ball
+		part.Material = Enum.Material.Neon
+		part.Color = Color3.new(1, 0, 0)
+		part.Parent = workspace
+
+		-- Disable collision with player
+		local noCollide = Instance.new("NoCollisionConstraint")
+		noCollide.Part0 = part
+		noCollide.Part1 = hrp
+		noCollide.Parent = part
+
+		-- Add BodyMover for fling
+		local bodyVel = Instance.new("BodyVelocity")
+		bodyVel.Velocity = Vector3.new(0,0,0)
+		bodyVel.MaxForce = Vector3.new(1e6,1e6,1e6)
+		bodyVel.Parent = part
+
+		table.insert(orbitObjects, part)
+	end
+end
+
+-- Function to orbit around player
+local angle = 0
+local function orbit()
+	RunService.Heartbeat:Connect(function()
+		if enabled then
+			angle = angle + orbitSpeed * RunService.Heartbeat:Wait()
+			for i, part in ipairs(orbitObjects) do
+				local offset = (i / #orbitObjects) * math.pi * 2
+				local x = math.cos(angle + offset) * orbitDistance
+				local z = math.sin(angle + offset) * orbitDistance
+				part.Position = hrp.Position + Vector3.new(x, 0, z)
+
+				-- Check for nearby players to fling
+				for _, otherPlayer in ipairs(Players:GetPlayers()) do
+					if otherPlayer ~= player and otherPlayer.Character and otherPlayer.Character:FindFirstChild("HumanoidRootPart") then
+						local otherHRP = otherPlayer.Character.HumanoidRootPart
+						if (otherHRP.Position - part.Position).Magnitude < 3 then
+							otherHRP.Velocity = Vector3.new(math.random(-flingForce, flingForce), flingForce, math.random(-flingForce, flingForce))
+						end
+					end
+				end
+			end
+		end
+	end)
+end
+
+-- Toggle function
+local function toggleOrbit()
+	enabled = not enabled
+	if enabled then
+		if #orbitObjects == 0 then
+			createOrbitObjects()
+		end
+	else
+		for _, part in ipairs(orbitObjects) do
+			part:Destroy()
+		end
+		orbitObjects = {}
+	end
+end
+
+-- Connect GUI button
+button.MouseButton1Click:Connect(toggleOrbit)
+
+-- Start orbit logic
+orbit()
+
+-- Subspace Tripmine Script with Laser Beam (Executor version)
+-- Asset ID: 11999247
+
+-- SETTINGS
+local mineModelId = 11999247
+local explosionRadius = 20
+local explosionDamage = 50
+local triggerDistance = 10
+local mineLifeTime = 60 -- seconds before auto-remove
+local laserColor = Color3.fromRGB(255, 0, 0)
+
+-- Load mine model
+local function loadMine()
+	local mine = game:GetObjects("rbxassetid://" .. mineModelId)[1]
+	mine.Parent = workspace
+	mine.Anchored = true
+	return mine
+end
+
+-- Place mine at player position
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local root = character:WaitForChild("HumanoidRootPart")
+
+local mine = loadMine()
+mine.CFrame = root.CFrame * CFrame.new(0, -2, -5)
+
+-- Laser Part
+local laser = Instance.new("Part")
+laser.Anchored = true
+laser.CanCollide = false
+laser.Material = Enum.Material.Neon
+laser.Color = laserColor
+laser.Size = Vector3.new(0.1, 0.1, 1)
+laser.Parent = workspace
+
+-- Find wall or create fixed point
+local laserEnd = mine.Position + (mine.CFrame.LookVector * 50)
+
+-- Update laser size and position
+local function updateLaser()
+	local startPos = mine.Position
+	local endPos = laserEnd
+	local dist = (startPos - endPos).Magnitude
+	laser.Size = Vector3.new(0.1, 0.1, dist)
+	laser.CFrame = CFrame.new(startPos, endPos) * CFrame.new(0, 0, -dist / 2)
+end
+
+updateLaser()
+
+-- Tripmine trigger
+local triggered = false
+
+task.spawn(function()
+	local startPos = mine.Position
+	local startTime = tick()
+
+	while mine.Parent and not triggered do
+		-- Auto-remove after lifetime
+		if tick() - startTime > mineLifeTime then
+			mine:Destroy()
+			laser:Destroy()
+			break
+		end
+
+		-- Check players
+		for _, plr in pairs(game.Players:GetPlayers()) do
+			if plr ~= player and plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then
+				local hrp = plr.Character.HumanoidRootPart
+				local dist = (hrp.Position - startPos).Magnitude
+				if dist <= triggerDistance then
+					triggered = true
+
+					-- Explosion
+					local explosion = Instance.new("Explosion")
+					explosion.Position = mine.Position
+					explosion.BlastRadius = explosionRadius
+					explosion.BlastPressure = 0
+					explosion.Parent = workspace
+
+					-- Damage nearby players
+					for _, p in pairs(game.Players:GetPlayers()) do
+						if p.Character and p.Character:FindFirstChild("HumanoidRootPart") then
+							local hum = p.Character:FindFirstChild("Humanoid")
+							if hum and (p.Character.HumanoidRootPart.Position - startPos).Magnitude <= explosionRadius then
+								hum:TakeDamage(explosionDamage)
+							end
+						end
+					end
+
+					mine:Destroy()
+					laser:Destroy()
+					break
+				end
+			end
+		end
+
+		task.wait(0.1)
+	end
+end)
+
+local player = game.Players.LocalPlayer
+local baseDamage = 60         -- initial hit damage
+local poisonDamage = 15        -- damage per tick
+local poisonDuration = 10      -- seconds target takes poison damage
+local venomshankAssetId = 961741474
+local dagger
+
+-- Equip Venomshank
+local function equipVenomshank()
+	if dagger then dagger:Destroy() end
+	dagger = game:GetObjects("rbxassetid://"..venomshankAssetId)[1]
+	dagger.Parent = player.Character
+
+	local rightHand = player.Character:FindFirstChild("RightHand") or player.Character:FindFirstChild("Right Arm")
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = rightHand
+	weld.Part1 = dagger.Handle
+	weld.Parent = dagger.Handle
+
+	-- Poison damage and visual effect on touch
+	dagger.Handle.Touched:Connect(function(hit)
+		if hit and hit.Parent ~= player.Character then
+			local humanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+			local hrp = hit.Parent:FindFirstChild("HumanoidRootPart")
+			if humanoid and hrp then
+				humanoid:TakeDamage(baseDamage)
+
+				-- Apply poison damage over time
+				spawn(function()
+					-- Create poison particle effect
+					local poisonParticle = Instance.new("ParticleEmitter")
+					poisonParticle.Texture = "rbxassetid://241594315" -- green poison particle
+					poisonParticle.Rate = 100
+					poisonParticle.Lifetime = NumberRange.new(1)
+					poisonParticle.Speed = NumberRange.new(2)
+					poisonParticle.Parent = hrp
+
+					for i = 1, poisonDuration do
+						if humanoid.Health > 0 then
+							humanoid:TakeDamage(poisonDamage)
+						end
+						wait(1)
+					end
+
+					-- Remove particle effect
+					poisonParticle:Destroy()
+				end)
+			end
+		end
+	end)
+end
+
+-- Equip immediately
+equipVenomshank()
+
+local player = game.Players.LocalPlayer
+local damageAmount = 60          -- optional base damage
+local pushForce = 100            -- strength of the push
+local windforceAssetId = 5212574795
+local sword
+
+-- Equip Windforce
+local function equipWindforce()
+	if sword then sword:Destroy() end
+	sword = game:GetObjects("rbxassetid://"..windforceAssetId)[1]
+	sword.Parent = player.Character
+
+	local rightHand = player.Character:FindFirstChild("RightHand") or player.Character:FindFirstChild("Right Arm")
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = rightHand
+	weld.Part1 = sword.Handle
+	weld.Parent = sword.Handle
+
+	-- Damage, knockback, and wind effect on touch
+	sword.Handle.Touched:Connect(function(hit)
+		if hit and hit.Parent ~= player.Character then
+			local humanoid = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+			local hrp = hit.Parent:FindFirstChild("HumanoidRootPart")
+			if humanoid then
+				humanoid:TakeDamage(damageAmount)
+			end
+
+			if hrp then
+				-- Apply knockback
+				local direction = (hrp.Position - player.Character.HumanoidRootPart.Position).unit
+				local bv = Instance.new("BodyVelocity")
+				bv.Velocity = direction * pushForce + Vector3.new(0, pushForce/2, 0)
+				bv.MaxForce = Vector3.new(1e5,1e5,1e5)
+				bv.P = 1250
+				bv.Parent = hrp
+				game:GetService("Debris"):AddItem(bv, 0.3)
+
+				-- Add wind particle effect
+				local windParticle = Instance.new("ParticleEmitter")
+				windParticle.Texture = "rbxassetid://241594316" -- wind-like particle texture
+				windParticle.Rate = 100
+				windParticle.Lifetime = NumberRange.new(0.5)
+				windParticle.Speed = NumberRange.new(5)
+				windParticle.Rotation = NumberRange.new(0, 360)
+				windParticle.RotSpeed = NumberRange.new(100)
+				windParticle.Parent = hrp
+				game:GetService("Debris"):AddItem(windParticle, 0.5)
+			end
+		end
+	end)
+end
+
+-- Equip immediately
+equipWindforce()
+
+local nextButton = script.Parent
+local page1 = nextButton.Parent
+local page2 = page1.Parent:WaitForChild("Frame2")
+
+nextButton.MouseButton1Click:Connect(function()
+	page1.Visible = false
+	page2.Visible = true
+end)
