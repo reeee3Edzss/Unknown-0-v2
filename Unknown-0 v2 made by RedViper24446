@@ -1983,3 +1983,29 @@ nextButton.MouseButton1Click:Connect(function()
 	page1.Visible = false
 	page2.Visible = true
 end)
+
+local openButton = script.Parent
+local gui = openButton.Parent
+local page1 = gui:WaitForChild("Frame1")
+local page2 = gui:WaitForChild("Frame2")
+
+openButton.MouseButton1Click:Connect(function()
+	page1.Visible = true
+	page2.Visible = false
+end)
+
+local backButton = script.Parent
+local page2 = backButton.Parent
+local page1 = page2.Parent:WaitForChild("Frame1")
+
+backButton.MouseButton1Click:Connect(function()
+	page2.Visible = false
+	page1.Visible = true
+end)
+
+local closeButton = script.Parent
+local page = closeButton.Parent
+
+closeButton.MouseButton1Click:Connect(function()
+	page.Visible = false
+end)
